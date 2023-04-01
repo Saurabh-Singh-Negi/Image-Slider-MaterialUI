@@ -27,6 +27,10 @@ export default function Home() {
         isLastImage ? setId(0) : setId(id+1);
     }
 
+    const handleImageClick = (index) => {
+        setId(index);
+    }
+
     const handlePlay = () => {
         
         setPlaying(true);
@@ -96,8 +100,10 @@ export default function Home() {
         <Stack direction='row' spacing={2}>
             {
                 images.map((image,index) => (
-                    <Card key={image.id} className={id === index? "clicked":"img-grey"} sx={{ 
-                        borderRadius: '20px'
+                    <Card onClick={() => handleImageClick(index)} key={image.id} className={id === index? "clicked":"img-grey"} sx={{ 
+                        borderRadius: '20px',
+                        cursor: 'pointer'
+
                         }}>
                     <CardMedia 
                         component="img"
