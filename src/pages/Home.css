@@ -1,0 +1,7 @@
+.img-grey {
+    filter: grayscale(100%);
+}
+
+.clicked {
+    filter: grayscale(0%);
+}
