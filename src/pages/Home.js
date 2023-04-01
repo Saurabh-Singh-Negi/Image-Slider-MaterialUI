@@ -1,11 +1,9 @@
 import * as React from 'react';
 import Card from '@mui/material/Card';
-// import CardActions from '@mui/material/CardActions';
 import PlayCircleFilledWhiteIcon from '@mui/icons-material/PlayCircleFilledWhite';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import PauseCircleIcon from '@mui/icons-material/PauseCircle';
 import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Box, Stack } from '@mui/system';
 import images from '../utils/images';
@@ -13,7 +11,7 @@ import { useState } from 'react';
 import { IconButton } from '@mui/material';
 import { useEffect } from 'react';
 import { useRef } from 'react';
-import './Home.css'
+import './Home.css';
 
 export default function Home() {
     const [id, setId] = useState(0);
@@ -98,7 +96,7 @@ export default function Home() {
         <Stack direction='row' spacing={2}>
             {
                 images.map((image,index) => (
-                    <Card className={id === index? "clicked":"img-grey"} sx={{ 
+                    <Card key={image.id} className={id === index? "clicked":"img-grey"} sx={{ 
                         borderRadius: '20px'
                         }}>
                     <CardMedia 
